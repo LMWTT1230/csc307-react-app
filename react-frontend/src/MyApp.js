@@ -2,7 +2,7 @@
 import React from "react";
 import Table from "./Table";
 
-const characters = [
+/*const characters = [
   {
     name: "Charlie",
     job: "Janitor",
@@ -20,13 +20,41 @@ const characters = [
     job: "Bartender",
   },
 ];
+*/
 
 function MyApp() {
+  const [characters, setCharacters] = useState([
+      {
+        name: 'Charlie',
+        job: 'Janitor',
+      },
+      // the rest of the data
+      {
+        name: "Mac",
+        job: "Bouncer",
+      },
+      {
+        name: "Dee",
+        job: "Aspring actress",
+      },
+      {
+        name: "Dennis",
+        job: "Bartender",
+      },
+    ]); 
+
+    function removeOneCharacter (index) {
+	    const updated = characters.filter((character, i) => {
+	        return i !== index
+	    });
+	  setCharacters(updated);
+    }
+    
   return (
-    <div className="container">
-      <Table characterData={characters} />
-    </div>
-  );
+	<div className="container">
+	    <Table characterData={characters} />
+     </div>
+  ) 
 }
 
 export default MyApp;
