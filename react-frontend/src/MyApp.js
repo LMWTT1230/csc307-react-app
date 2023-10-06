@@ -50,12 +50,12 @@ function MyApp() {
     }
  }
 
- useEffect(() => {
-  fetchAll().then( result => {
-     if (result)
-        setCharacters(result);
-   });
-}, [] );
+  useEffect(() => {
+    fetchAll().then( result => {
+      if (result)
+          setCharacters(result);
+    });
+  }, [] );
   
   return (
     <div className="container">
